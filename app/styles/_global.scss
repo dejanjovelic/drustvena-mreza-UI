@@ -1,0 +1,45 @@
+$text-color: #28282b;
+
+html,
+body {
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+    box-shadow: 0 4px 5px -3px gray;
+    color: $text-color;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+
+
+    h1 {
+        font-size: 30px;
+    }
+
+    #nav-links {
+        list-style: none;
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+
+
+        a {
+            text-decoration: none;
+            color: rgb(190, 189, 189);
+        }
+
+        #current-page {
+            color: $text-color;
+        }
+
+
+    }
+}
