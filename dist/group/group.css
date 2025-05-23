@@ -34,4 +34,38 @@ body {
   color: #28282b;
 }
 
+table {
+  margin: 50px auto;
+  width: 30%;
+  border-collapse: collapse;
+}
+table th {
+  background-color: #28282b;
+  color: whitesmoke;
+}
+table th, table td {
+  border: 1px solid lightgray;
+  font-size: 18px;
+  padding: 5px;
+  height: 30px;
+}
+table tbody tr:hover {
+  background-color: lightgray;
+}
+table #deleteBtn {
+  background-color: #28282b;
+  color: whitesmoke;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+}
+table #deleteBtn:hover {
+  background-color: #47474d;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 100px;
+}
+
 /*# sourceMappingURL=group.css.map */
