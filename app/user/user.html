@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../dist/group/group.css">
+    <link rel="stylesheet" href="../../dist/user/user.css">
     <title>Document</title>
 </head>
 <body>
@@ -15,10 +14,34 @@
             <li ><a href="../group/group.html">Group</a></li>
         </ul>
     </nav>
-    
-    <script src="index.js"></script>
+    <h2>User data:</h2>
+    <p id="no-data-message" class="hidden">No data to display.</p>
+    <div id="table-container">
+        <table>
+            <thead class="hidden">
+                <tr>
+                    <th>Id</th>
+                    <th>User name</th>
+                    <th>Name</th>
+                    <th>Lastname</th>
+                    <th>Birthdate</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>    
+    <script src="user.js"></script>
 </body>
 </html>
+
+<!-- public int Id { get; set; }
+public string UserName { get; set; }
+public string Name { get; set; }
+public string Lastname { get; set; }
+public DateTime Birthdate { get; set; } -->
 
 
 
