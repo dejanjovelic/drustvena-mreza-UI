@@ -1,7 +1,7 @@
 @use '../styles/global' as*;
 
 table{
-    margin: 50px auto;
+    margin: 20px auto;
     width: 30%;
     border-collapse: collapse;
 
@@ -35,4 +35,18 @@ table{
 h2 {
     text-align: center;
     margin-top: 100px;
+}
+#add-group-btn {
+    display: block;
+    justify-self: center;
+    margin-top: 50px;
+    margin-left: 500px;
+    background-color: $text-color;
+    color: whitesmoke;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    &:hover {
+        background-color: #47474d;
+    }
 }

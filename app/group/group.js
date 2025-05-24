@@ -1,4 +1,9 @@
 function Initialize(){
+    let addGroupBtn = document.getElementById('add-group-btn')
+    addGroupBtn.addEventListener('click', function(){
+        window.location.href = '../groupForm/groupForm.html'
+    })
+
     GetGroups()
 }
 

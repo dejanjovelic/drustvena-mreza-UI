@@ -73,8 +73,41 @@ body {
   display: none;
 }
 
-div {
+h2 {
   text-align: center;
+  margin-top: 100px;
 }
 
-/*# sourceMappingURL=index.css.map */
+#form-div {
+  border: 1px solid lightgray;
+  box-shadow: 0 4px 5px -3px gray;
+  margin-top: 50px;
+  width: 300px;
+  justify-self: center;
+}
+#form-div button {
+  width: 70px;
+  display: inline-block;
+  margin-left: 30px;
+  background-color: #28282b;
+  color: whitesmoke;
+  border: none;
+  border-radius: 3px;
+  padding: 7px;
+}
+#form-div button:hover {
+  background-color: #47474d;
+}
+#form-div #add-btn {
+  margin-left: 100px;
+}
+
+#group-form {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=groupForm.css.map */
