@@ -64,8 +64,12 @@ body {
   background-color: lightgray;
 }
 
-div {
+.hidden {
+  display: none;
+}
+
+h2 {
   text-align: center;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=groups-users.css.map */

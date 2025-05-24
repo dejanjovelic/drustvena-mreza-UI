@@ -34,6 +34,36 @@ body {
   color: #28282b;
 }
 
+#table-container {
+  display: flex;
+  justify-content: center;
+}
+#table-container table {
+  box-shadow: 0 4px 5px -3px gray;
+  width: 500px;
+  text-align: center;
+  border-collapse: collapse;
+}
+#table-container table thead {
+  background-color: #28282b;
+  color: whitesmoke;
+}
+#table-container table thead th {
+  padding: 5px;
+}
+#table-container table th,
+#table-container table td {
+  height: 20px;
+  border: 1px solid lightgray;
+  font-size: 18px;
+}
+#table-container table td {
+  padding: 5px;
+}
+#table-container table tbody tr:hover {
+  background-color: lightgray;
+}
+
 table {
   margin: 50px auto;
   width: 30%;

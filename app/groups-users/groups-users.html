@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../dist/user/user.css">
-    <title>Users</title>
+    <title>Group details</title>
+    <link rel="stylesheet" href="../../dist/groups-users/groups-users.css">
 </head>
+
 <body>
     <nav id="navbar">
         <h1 id="title">Social media</h1>
         <ul id="nav-links">
-            <li><a href="" id="current-page">User</a></li>
-            <li ><a href="../group/group.html">Group</a></li>
+            <li><a href="../user/user.html">User</a></li>
+            <li><a href="../group/group.html">Group</a></li>
         </ul>
     </nav>
-    <h2>User data:</h2>
-    <p id="no-data-message" class="hidden">No data to display.</p>
+
+    <h2>Group users details:</h2>
+    <p id="no-data-message" class="hidden">The Group has no users</p>
     <div id="table-container">
-        <table>
+        <table id="details-table">
             <thead class="hidden">
                 <tr>
                     <th>Id</th>
@@ -31,19 +34,8 @@
 
             </tbody>
         </table>
-
-    </div>    
-    <script src="user.js"></script>
+    </div>
+    <script src="groups-users.js"></script>
 </body>
+
 </html>
-
-<!-- public int Id { get; set; }
-public string UserName { get; set; }
-public string Name { get; set; }
-public string Lastname { get; set; }
-public DateTime Birthdate { get; set; } -->
-
-
-
-
-

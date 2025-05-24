@@ -52,10 +52,21 @@ function renderData(data){
                 })
         })
 
+        let tdDetails = document.createElement("td")
+        let detailsBtn = document.createElement("button")
+        detailsBtn.textContent = "Details"
+        detailsBtn.id = 'deleteBtn'
+        detailsBtn.addEventListener("click", function(){
+            window.location.href = "../groups-users/groups-users.html?id=" + group['id']
+        })
+        tdDetails.appendChild(detailsBtn)
+
+        
         tr.appendChild(tdName)
         tr.appendChild(tdDate)
         tdDelete.appendChild(deleteBtn)
         tr.appendChild(tdDelete)
+        tr.appendChild(tdDetails)
         tableBody.appendChild(tr)
 
     });

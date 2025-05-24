@@ -39,7 +39,45 @@ body {
         #current-page {
             color: $text-color;
         }
+    }
+}
 
+#table-container {
+    display: flex;
+    justify-content: center;
 
+    table {
+        box-shadow: 0 4px 5px -3px gray;
+        width: 500px;
+        text-align: center;
+        border-collapse: collapse;
+       
+        thead {
+            background-color: $text-color;
+            color: whitesmoke;
+            th{
+                padding: 5px;
+            }
+        }
+
+        th,
+        td {
+
+            height: 20px;
+            border: 1px solid lightgray;
+            font-size: 18px;
+        }
+        td{
+            padding: 5px;
+        }
+
+        tbody {
+            tr {
+
+                &:hover {
+                    background-color: lightgray;
+                }
+            }
+        }
     }
 }
