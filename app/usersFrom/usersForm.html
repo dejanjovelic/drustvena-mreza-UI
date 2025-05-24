@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../dist/usersFrom/usersForm.css">
+    <title>Social media - Groups</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <h1 id="title">Social media</h1>
+        <ul id="nav-links">
+            <li><a href="../user/user.html">User</a></li>
+            <li><a href="" id="current-page">Group</a></li>
+        </ul>
+    </nav>
+    <div id="form-container">
+        <form id="form">
+
+            <label for="userName">User name:</label>
+            <input type="text" name="userName" id="userName">
+            <span id="userNameError"></span>
+            <br>
+
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+            <span id="nameError"></span>
+            <br>
+
+            <label for="lastname">Lastname:</label>
+            <input type="text" name="lastname" id="lastname">
+            <span id="lastnameError"></span>
+            <br>
+
+            <label for="birthdate">Birthdate:</label>
+            <input type="datetime-local" name="" id="birthdate">
+            <span id="birthdateError"></span>
+            <br>
+        </form>
+        <div class="actionsBtns">
+            <button id="submitBtn">Submit</button>
+            <button id="cancelBtn">Cancel</button>
+        </div>
+
+    </div>
+
+    <script src="usersForm.js"></script>
+</body>
+
+</html>
+
+<!-- public int Id { get; set; }
+public string UserName { get; set; }
+public string Name { get; set; }
+public string Lastname { get; set; }
+public DateTime Birthdate { get; set; } -->
