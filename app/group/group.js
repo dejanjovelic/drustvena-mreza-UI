@@ -1,4 +1,9 @@
 function Initialize(){
+    let addGroupBtn = document.getElementById('add-group-btn')
+    addGroupBtn.addEventListener('click', function(){
+        window.location.href = '../groupForm/groupForm.html'
+    })
+
     GetGroups()
 }
 
@@ -57,7 +62,7 @@ function renderData(data){
         detailsBtn.textContent = "Details"
         detailsBtn.id = 'deleteBtn'
         detailsBtn.addEventListener("click", function(){
-            window.location.href = "../groups-users/groups-users.html?id=" + group['id']
+            window.location.href = "../groups-users/groups-users.html?id=" + group['id'] + "&name=" + group['name']
         })
         tdDetails.appendChild(detailsBtn)
 

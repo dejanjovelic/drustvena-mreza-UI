@@ -11,7 +11,7 @@ function getAll() {
             }
             return response.json()
         })
-        .then(books => rednderUsers(books))
+        .then(users => rednderUsers(users))
         .catch(error => {
             console.log('Error: ' + error.message)
 
@@ -25,13 +25,13 @@ function getAll() {
         })
 }
 
-function rednderUsers(books) {
+function rednderUsers(users) {
     let table = document.querySelector('table tbody')
     table.innerHTML = "";
 
     let tableHeader = document.querySelector('table thead')
 
-    if (books.length === 0) {
+    if (users.length === 0) {
         tableHeader.classList.add('hidden')
 
         const noDatamessage = document.querySelector("#no-data-message")
@@ -43,27 +43,27 @@ function rednderUsers(books) {
         noDatamessage.classList.add('hidden')
     }
 
-    books.forEach(book => {
+    users.forEach(users => {
         let newRow = document.createElement("tr")
 
         let cell1 = document.createElement("td")
-        cell1.textContent = book.id
+        cell1.textContent = users.id
         newRow.appendChild(cell1)
 
         let cell2 = document.createElement("td")
-        cell2.textContent = book['userName']
+        cell2.textContent = users['userName']
         newRow.appendChild(cell2)
 
         let cell3 = document.createElement("td")
-        cell3.textContent = book['name']
+        cell3.textContent = users['name']
         newRow.appendChild(cell3)
 
         let cell4 = document.createElement("td")
-        cell4.textContent = book['lastname']
+        cell4.textContent = users['lastname']
         newRow.appendChild(cell4)
 
         let cell5 = document.createElement("td")
-        cell5.textContent = formatDate(new Date(book['birthdate']))
+        cell5.textContent = formatDate(new Date(users['birthdate']))
         newRow.appendChild(cell5)
 
         table.appendChild(newRow)

@@ -64,12 +64,39 @@ body {
   background-color: lightgray;
 }
 
+.required-field {
+  color: rgb(248, 69, 69);
+  font-size: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
 .hidden {
   display: none;
 }
 
 h2 {
   text-align: center;
+}
+
+#table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#deleteBtn {
+  background-color: #28282b;
+  color: whitesmoke;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+#deleteBtn:hover {
+  background-color: #47474d;
 }
 
 /*# sourceMappingURL=groups-users.css.map */
