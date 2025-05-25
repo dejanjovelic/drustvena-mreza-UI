@@ -34,33 +34,34 @@ body {
   color: #28282b;
 }
 
-#table-container {
+#table-container, #table-details {
   display: flex;
   justify-content: center;
 }
-#table-container table {
+#table-container table, #table-details table {
   box-shadow: 0 4px 5px -3px gray;
-  width: 500px;
+  width: 600px;
   text-align: center;
   border-collapse: collapse;
 }
-#table-container table thead {
+#table-container table thead, #table-details table thead {
   background-color: #28282b;
   color: whitesmoke;
 }
-#table-container table thead th {
+#table-container table thead th, #table-details table thead th {
   padding: 5px;
 }
 #table-container table th,
-#table-container table td {
+#table-container table td, #table-details table th,
+#table-details table td {
   height: 20px;
   border: 1px solid lightgray;
   font-size: 18px;
 }
-#table-container table td {
+#table-container table td, #table-details table td {
   padding: 5px;
 }
-#table-container table tbody tr:hover {
+#table-container table tbody tr:hover, #table-details table tbody tr:hover {
   background-color: lightgray;
 }
 
@@ -73,12 +74,41 @@ body {
   display: none;
 }
 
+button {
+  background-color: #28282b;
+  color: whitesmoke;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+}
+button:hover {
+  background-color: #47474d;
+}
+
 .hidden {
   display: none;
 }
 
 h2 {
   text-align: center;
+  margin-top: 100px;
+}
+
+#editBtn {
+  width: 60px;
+}
+
+#addBtn {
+  width: 110px;
+  padding: 7px;
+  font-size: 15px;
+}
+
+#btnContainer {
+  width: 600px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /*# sourceMappingURL=user.css.map */

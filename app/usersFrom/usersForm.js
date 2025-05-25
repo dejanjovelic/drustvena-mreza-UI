@@ -6,7 +6,55 @@ function initializationFormUser() {
     let cancelBtn = document.querySelector("#cancelBtn")
     cancelBtn.addEventListener('click', function () {
         window.location.href = "../user/user.html"
-    })
+    })    
+
+    const urlParams = new URLSearchParams(window.location.search)
+    const id = urlParams.get('id')
+
+    if (id) {      
+        let formTitle = document.querySelector('#edit-add-form')
+        formTitle.textContent = "EDIT USER FORM"
+        
+    } else {
+        let formTitle = document.querySelector('#edit-add-form')
+        formTitle.textContent = "ADD USER FORM"
+        
+    }
+    get()
+}
+
+function get() {
+    const urlParams = new URLSearchParams(window.location.search)
+    const id = urlParams.get('id')
+
+    if(!id){
+        return
+    }
+
+    fetch('http://localhost:33229/api/users/' + id)
+        .then(response => {
+            if (!response.ok) {
+                const error = new Error("Request failed. Status: " + response.status)
+                error.response = response
+                throw error
+            }
+            return response.json()
+        })
+        .then(user => {
+            document.querySelector('#userName').value = user.userName;
+            document.querySelector('#name').value = user.name;
+            document.querySelector('#lastname').value = user.lastname;
+            document.querySelector('#birthdate').value = user.birthdate.split('T')[0];
+
+        })
+        .catch(error => {
+            console.log('Error: ' + error.message)
+            if (error.response && error.response.status === 404) {
+                alert("User does not exist!")
+            } else {
+                alert("An error occured while loading data. Please try again.")
+            }
+        })
 }
 
 function submit() {
@@ -20,33 +68,50 @@ function submit() {
         birthdate: formData.get('birthdate')
     }
 
-const userNameErrorMessage = document.querySelector('#userNameError')
-userNameErrorMessage.textContent = "";
+    const userNameErrorMessage = document.querySelector('#userNameError')
+    userNameErrorMessage.textContent = "";
 
-const nameErrorMessage = document.querySelector('#nameError')
-nameErrorMessage.textContent = "";
+    const nameErrorMessage = document.querySelector('#nameError')
+    nameErrorMessage.textContent = "";
 
-const lastnameErrorMessage = document.querySelector('#lastname')
-lastnameErrorMessage.textContent = "";
+    const lastnameErrorMessage = document.querySelector('#lastnameError')
+    lastnameErrorMessage.textContent = "";
 
-const birthdateErrorMessage = document.querySelector('#birthdate')
-birthdateErrorMessage.textContent = "";
+    const birthdateErrorMessage = document.querySelector('#birthdateError')
+    birthdateErrorMessage.textContent = "";
 
-if(regBody.userName.trim() === ""){
-    userNameErrorMessage.textContent = "Username field is requaired." 
-}
-if(regBody.name.trim() === ""){
-    nameErrorMessage.textContent = "Name field is requaired." 
-}
-if(regBody.lastname.trim() === ""){
-    lastnameErrorMessage.textContent = "Lastname field is requaired." 
-}
-if(regBody.birthdate === new Date()){
-    birthdateErrorMessage.textContent = "Birthdate field is requaired." 
-}
+    if (regBody.userName.trim() === "") {
+        userNameErrorMessage.textContent = "Username field is requaired."
+        // return
+    }
+    if (regBody.name.trim() === "") {
+        nameErrorMessage.textContent = "Name field is requaired."
+        // return
+    }
+    if (regBody.lastname.trim() === "") {
+        lastnameErrorMessage.textContent = "Lastname field is requaired."
+        // return
+    }
+        
+    if (regBody.birthdate === "") {
+        birthdateErrorMessage.textContent = "Birthdate field is requaired."
+        return
+    }
 
-    fetch('http://localhost:33229/api/users', {
-        method: 'POST',
+    const urlParams = new URLSearchParams(window.location.search)
+    const id = urlParams.get('id')
+
+    let method = "POST";
+    let url = 'http://localhost:33229/api/users';
+
+    if (id) {
+        method = "PUT";
+        url = 'http://localhost:33229/api/users/' + id;        
+    }
+
+
+    fetch(url, {
+        method: method,
         headers: {
             'Content-Type': 'application/json'
         },
@@ -54,22 +119,25 @@ if(regBody.birthdate === new Date()){
     })
         .then(response => {
             if (!response.ok) {
-                const erorr = new Error('Request failed. Status: ' + response.status)
-                erorr.response = response
-                throw erorr
+                const error = new Error('Request failed. Status: ' + response.status)
+                error.response = response
+                throw error
             }
             return response.json()
         })
         .then(user => {
             window.location.href = "../user/user.html"
         })
-        .catch(erorr => {
-            console.log('Error: ' + erorr.message)
-            if (erorr.response && erorr.response.status === 400) {
+        .catch(error => {
+            console.log('Error: ' + error.message)
+            if (error.response && error.response.status === 404) {
+                alert("User does not exist!")
+            } else if (error.response && error.response.status === 400) {
                 alert('invalid data input.')
             } else {
                 alert('An error occured while creating new user. Please try againg')
             }
         })
-}
+    }
+
 document.addEventListener('DOMContentLoaded', initializationFormUser)

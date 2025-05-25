@@ -34,33 +34,34 @@ body {
   color: #28282b;
 }
 
-#table-container {
+#table-container, #table-details {
   display: flex;
   justify-content: center;
 }
-#table-container table {
+#table-container table, #table-details table {
   box-shadow: 0 4px 5px -3px gray;
-  width: 500px;
+  width: 600px;
   text-align: center;
   border-collapse: collapse;
 }
-#table-container table thead {
+#table-container table thead, #table-details table thead {
   background-color: #28282b;
   color: whitesmoke;
 }
-#table-container table thead th {
+#table-container table thead th, #table-details table thead th {
   padding: 5px;
 }
 #table-container table th,
-#table-container table td {
+#table-container table td, #table-details table th,
+#table-details table td {
   height: 20px;
   border: 1px solid lightgray;
   font-size: 18px;
 }
-#table-container table td {
+#table-container table td, #table-details table td {
   padding: 5px;
 }
-#table-container table tbody tr:hover {
+#table-container table tbody tr:hover, #table-details table tbody tr:hover {
   background-color: lightgray;
 }
 
@@ -73,32 +74,14 @@ body {
   display: none;
 }
 
-table {
-  margin: 20px auto;
-  width: 30%;
-  border-collapse: collapse;
-}
-table th {
-  background-color: #28282b;
-  color: whitesmoke;
-}
-table th, table td {
-  border: 1px solid lightgray;
-  font-size: 18px;
-  padding: 5px;
-  height: 30px;
-}
-table tbody tr:hover {
-  background-color: lightgray;
-}
-table #deleteBtn {
+button {
   background-color: #28282b;
   color: whitesmoke;
   border: none;
   border-radius: 3px;
   padding: 5px;
 }
-table #deleteBtn:hover {
+button:hover {
   background-color: #47474d;
 }
 
@@ -111,12 +94,14 @@ h2 {
   display: block;
   justify-self: center;
   margin-top: 50px;
+  margin-bottom: 20px;
   margin-left: 500px;
+  width: 100px;
   background-color: #28282b;
   color: whitesmoke;
   border: none;
   border-radius: 3px;
-  padding: 5px;
+  padding: 7px;
 }
 #add-group-btn:hover {
   background-color: #47474d;

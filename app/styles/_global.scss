@@ -42,20 +42,21 @@ body {
     }
 }
 
-#table-container {
+#table-container, #table-details {
     display: flex;
     justify-content: center;
 
     table {
         box-shadow: 0 4px 5px -3px gray;
-        width: 500px;
+        width: 600px;
         text-align: center;
         border-collapse: collapse;
-       
+
         thead {
             background-color: $text-color;
             color: whitesmoke;
-            th{
+
+            th {
                 padding: 5px;
             }
         }
@@ -67,7 +68,8 @@ body {
             border: 1px solid lightgray;
             font-size: 18px;
         }
-        td{
+
+        td {
             padding: 5px;
         }
 
@@ -89,4 +91,16 @@ body {
 
 .hidden {
     display: none;
+}
+
+button {
+    background-color: $text-color;
+    color: whitesmoke;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+
+    &:hover {
+        background-color: #47474d;
+    }
 }

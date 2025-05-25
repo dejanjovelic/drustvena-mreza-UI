@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../dist/user/user.css">
     <title>Users</title>
 </head>
+
 <body>
     <nav id="navbar">
         <h1 id="title">Social media</h1>
         <ul id="nav-links">
             <li><a href="" id="current-page">User</a></li>
-            <li ><a href="../group/group.html">Group</a></li>
+            <li><a href="../group/group.html">Group</a></li>
         </ul>
     </nav>
-    <h2>User data:</h2>
+     <h2>User data:</h2>
+
+    <div id="btnContainer">       
+         <button id="addBtn">Add new user</button>
+    </div>   
     <p id="no-data-message" class="hidden">No data to display.</p>
     <div id="table-container">
         <table>
@@ -25,6 +31,7 @@
                     <th>Name</th>
                     <th>Lastname</th>
                     <th>Birthdate</th>
+                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,9 +39,10 @@
             </tbody>
         </table>
 
-    </div>    
+    </div>
     <script src="user.js"></script>
 </body>
+
 </html>
 
 <!-- public int Id { get; set; }
@@ -42,8 +50,3 @@ public string UserName { get; set; }
 public string Name { get; set; }
 public string Lastname { get; set; }
 public DateTime Birthdate { get; set; } -->
-
-
-
-
-

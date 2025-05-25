@@ -1,5 +1,9 @@
 "use strict";
-function intializationUsers() {
+function initializationUsers() {
+    let addUserBtn = document.querySelector('#addBtn')
+    addUserBtn.addEventListener('click', function(){
+        window.location.href="../usersFrom/usersForm.html"
+    })
     getAll()
 }
 
@@ -66,6 +70,17 @@ function rednderUsers(users) {
         cell5.textContent = formatDate(new Date(users['birthdate']))
         newRow.appendChild(cell5)
 
+        let cell6 = document.createElement("td")
+        let editBtn = document.createElement("button")
+        editBtn.textContent = "Edit"
+        editBtn.id = "editBtn"
+        editBtn.addEventListener("click", function(){
+            window.location.href = "../usersFrom/usersForm.html?id=" + users['id']
+        })
+        cell6.appendChild(editBtn)
+        newRow.appendChild(cell6)
+
+
         table.appendChild(newRow)
 
     });
@@ -79,4 +94,4 @@ function formatDate(date) {
     return `${day}.${month}.${year}.`;
 }
 
-document.addEventListener('DOMContentLoaded', intializationUsers)
+document.addEventListener('DOMContentLoaded', initializationUsers)

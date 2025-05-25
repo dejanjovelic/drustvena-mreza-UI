@@ -1,37 +1,5 @@
 @use '../styles/global' as*;
 
-table{
-    margin: 20px auto;
-    width: 30%;
-    border-collapse: collapse;
-
-    th {
-        background-color: #28282b;
-        color: whitesmoke;
-    }
-
-    th, td {
-        border: 1px solid lightgray;
-        font-size: 18px;
-        padding: 5px;
-        height: 30px;
-    }
-    tbody {
-        tr:hover {
-                background-color: lightgray;
-        }
-    }
-    #deleteBtn {
-        background-color: $text-color;
-        color: whitesmoke;
-        border: none;
-        border-radius: 3px;
-        padding: 5px;
-    }
-    #deleteBtn:hover {
-        background-color: #47474d;
-    }
-}
 h2 {
     text-align: center;
     margin-top: 100px;
@@ -40,12 +8,15 @@ h2 {
     display: block;
     justify-self: center;
     margin-top: 50px;
+    margin-bottom: 20px;
     margin-left: 500px;
+    width: 100px;
+    
     background-color: $text-color;
     color: whitesmoke;
     border: none;
     border-radius: 3px;
-    padding: 5px;
+    padding: 7px;
     &:hover {
         background-color: #47474d;
     }

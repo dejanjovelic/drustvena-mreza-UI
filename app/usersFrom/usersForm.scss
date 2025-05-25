@@ -1,1 +1,51 @@
 @use '../styles/global' as*;
+
+h3 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 100px;
+
+}
+
+#form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    box-shadow: 0 4px 5px -3px gray;
+
+    #form {
+        align-items: center;
+        margin-top: 50px;
+        width: 600px;
+        padding: 10px;
+
+        input,
+        label {
+            margin: 5px;
+            padding: 5px;
+            width: 25%;
+        }
+
+        label {
+            display: inline-block;
+            font-weight: bolder;
+        }
+    }
+
+    .actionsBtns {
+        display: flex;
+        justify-content: space-around;
+        width: 600px;
+        padding-top: 20px;
+
+        #submitBtn,
+        #cancelBtn {
+            width: 80px;
+            padding: 8px;
+
+        }
+    }
+}
